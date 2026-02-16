@@ -1,0 +1,654 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+:root {
+  --black:      #0a0a0a;
+  --navy:       #1e3a8a;
+  --gold:       #c9a96e;
+  --gold-dark:  #b8944f;
+  --warm-white: #f8f6f0;
+  --text-dark:  #1a1a1a;
+  --text-mid:   #555;
+  --text-light: #888;
+  --border:     #e8e4dc;
+}
+
+/* ── SCROLL ANIMATIONS ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── SHARED ── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.section-label::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.section-label.center {
+  justify-content: center;
+}
+.section-label.center::before { display: none; }
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  padding: 13px 34px;
+  border-radius: 3px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.btn-gold:hover {
+  background: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201,169,110,0.3);
+}
+
+.btn-ghost {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 13px 34px;
+  border-radius: 3px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: border-color 0.25s, color 0.25s;
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── HERO ── */
+.hero {
+  padding-top: 70px;  
+  min-height: 100vh;
+  background: linear-gradient(110deg, var(--black) 0%, #0f1f4a 55%, #1e3a8a 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 80px;
+  gap: 60px;
+  overflow: hidden;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 70%);
+  right: 5%; top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Hero text — slides in from LEFT */
+.hero-text {
+  padding-top: 80px;
+  animation: slideFromLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes slideFromLeft {
+  from { opacity: 0; transform: translateX(-80px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Hero image — slides in from RIGHT */
+.hero-visual {
+  padding-top: 80px;
+  position: relative;
+  animation: slideFromRight 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+@keyframes slideFromRight {
+  from { opacity: 0; transform: translateX(80px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: var(--gold);
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+.hero-title em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.hero-img {
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 3px;
+  filter: brightness(0.85) contrast(1.05);
+  display: block;
+}
+
+.hero-stats {
+  position: absolute;
+  bottom: -16px;
+  left: -24px;
+  background: var(--gold);
+  padding: 22px 28px;
+  border-radius: 3px;
+  display: flex;
+  gap: 32px;
+}
+.stat { text-align: center; }
+.stat-n {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+}
+.stat-l {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(0,0,0,0.65);
+  margin-top: 2px;
+}
+
+/* ── MARQUEE ── */
+.marquee-bar {
+  background: var(--gold);
+  padding: 13px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-block;
+  animation: marquee 24s linear infinite;
+}
+.marquee-track span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0 32px;
+}
+.dot { margin-left: 8px; color: rgba(0,0,0,0.4); }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── WHO WE ARE ── */
+.who-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 90px 80px;
+  background: var(--warm-white);
+}
+.who-img-wrap { position: relative; }
+.who-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+.who-badge {
+  position: absolute;
+  bottom: -18px;
+  right: -18px;
+  background: var(--navy);
+  padding: 26px 30px;
+  border-radius: 3px;
+  text-align: center;
+}
+.badge-n {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.badge-l {
+  display: block;
+  font-size: 11px;
+  color: rgba(255,255,255,0.65);
+  margin-top: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.who-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 36px;
+}
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.feature:first-child { border-top: 1px solid var(--border); }
+.feature-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.feature-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 3px;
+}
+.feature-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+/* ── PRACTICE AREAS ── */
+.practices-section {
+  padding: 90px 80px;
+  background: white;
+}
+.practices-header { margin-bottom: 40px; }
+.practices-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--text-mid);
+  margin-top: 8px;
+}
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--border);
+}
+
+.practice-card {
+  background: white;
+  padding: 32px 26px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  cursor: pointer;
+  display: block;
+}
+.practice-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 3px;
+  background: var(--gold);
+  transition: width 0.35s;
+}
+.practice-card:hover { background: var(--black); }
+.practice-card:hover::after { width: 100%; }
+.practice-card:hover .practice-num  { color: rgba(201,169,110,0.2); }
+.practice-card:hover .practice-title { color: white; }
+.practice-card:hover .practice-snippet { color: rgba(255,255,255,0.55); }
+.practice-card:hover .practice-arrow { color: var(--gold); opacity: 1; }
+
+.practice-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #f0ece4;
+  line-height: 1;
+  margin-bottom: 16px;
+  transition: color 0.3s;
+}
+.practice-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  transition: color 0.3s;
+  line-height: 1.3;
+}
+.practice-snippet {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.6;
+  transition: color 0.3s;
+}
+.practice-arrow {
+  display: block;
+  margin-top: 18px;
+  font-size: 18px;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+/* ── QUOTE ── */
+.quote-section {
+  background: var(--black);
+  padding: 90px 80px;
+  text-align: center;
+}
+.big-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-style: italic;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.65;
+  max-width: 780px;
+  margin: 0 auto 28px;
+  quotes: none;
+}
+.big-quote::before {
+  content: '\201C';
+  font-size: 72px;
+  color: var(--gold);
+  line-height: 0;
+  vertical-align: -26px;
+  margin-right: 6px;
+  font-style: normal;
+}
+.quote-author {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* ── ATTORNEYS ── */
+.attorneys-section {
+  padding: 90px 80px;
+  background: white;
+}
+.attorneys-header { margin-bottom: 40px; }
+.attorneys-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--text-mid);
+  margin-top: 8px;
+}
+.attorneys-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.attorney-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.attorney-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.55s ease, filter 0.55s ease;
+  filter: grayscale(30%);
+}
+.attorney-card:hover .attorney-img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+.attorney-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, transparent 100%);
+  padding: 48px 24px 24px;
+  transform: translateY(60px);
+  transition: transform 0.35s ease;
+}
+.attorney-card:hover .attorney-overlay {
+  transform: translateY(0);
+}
+.attorney-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+.attorney-role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color:#c9a96e; 
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.attorney-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.attorney-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.attorney-link:hover { color: #c9a96e; }
+
+.attorney-link:last-child {
+  color: #0a66c2;                /* LinkedIn blue */
+  font-weight: 600;
+}
+.attorney-link:last-child:hover {
+  color: #0077b5;                /* Darker LinkedIn blue */
+}
+
+.attorney-link svg {
+  flex-shrink: 0;
+}
+/* ── BLOG ── */
+.blog-section {
+  padding: 90px 80px;
+  background: var(--warm-white);
+}
+.blog-header { margin-bottom: 40px; }
+.blog-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--text-mid);
+  margin-top: 8px;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.blog-card {
+  background: white;
+  border-radius: 3px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+.blog-img-wrap { position: relative; overflow: hidden; }
+.blog-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+.blog-card:hover .blog-img { transform: scale(1.06); }
+.blog-cat {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+}
+.blog-content { padding: 22px 24px 28px; }
+.blog-meta {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.blog-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+.blog-excerpt {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.blog-read {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero { padding: 0 40px; }
+  .hero-title { font-size: 44px; }
+  .who-section { padding: 70px 40px; gap: 50px; }
+  .practices-section, .attorneys-section, .blog-section, .quote-section { padding: 70px 40px; }
+  .practices-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+  .hero-visual { display: none; }
+  .hero-title { font-size: 38px; }
+  .who-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+  .practices-grid { grid-template-columns: 1fr; }
+  .attorneys-grid, .blog-grid { grid-template-columns: 1fr; }
+  .section-title { font-size: 32px; }
+  .practices-section, .attorneys-section, .blog-section, .quote-section { padding: 60px 24px; }
+  .big-quote { font-size: 20px; }
+}
