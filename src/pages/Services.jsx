@@ -169,9 +169,6 @@ export default function Services() {
               {s.body.map((para, j) => (
                 <p key={j} className="entry-body">{para}</p>
               ))}
-              <Link to="/contact" className="entry-cta">
-                Speak to a Specialist →
-              </Link>
             </div>
           ))}
         </div>

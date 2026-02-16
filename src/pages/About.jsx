@@ -5,27 +5,27 @@ import './About.css';
 const values = [
   {
     icon: '⚖',
-    title: 'Integrity First',
+    title: 'Experience & Expertise',
     description:
-      'Every instruction we receive is handled with the highest ethical standards. Our reputation is built on doing right by our clients — always.',
+      'Having perfected our craft over many years, we bring a rare combination of experience, expertise, and excellence — navigating complex and landmark matters with authority.',
   },
   {
     icon: '◎',
-    title: 'Surgical Precision',
+    title: 'Sound Legal Advice',
     description:
-      'We read every clause. We anticipate every argument. Attention to detail is not a value we preach — it is a habit we practise daily.',
+      'Clients retain us because we offer sound legal advice that anticipates challenges and seizes opportunities before they define the outcome.',
   },
   {
-    icon: '→',
-    title: 'Client-First Always',
+    icon: '✦',
+    title: 'World-Class Delivery',
     description:
-      'Your outcome shapes our strategy. We listen before we advise, and we measure success by the results we achieve for the people we serve.',
+      "We deliver world-class legal services with the precision required to address our clients' most critical legal and business concerns — turning complexity into clarity.",
   },
   {
     icon: '◈',
-    title: 'Cross-Border Reach',
+    title: 'Four Distinguished Partners',
     description:
-      'From Nairobi to London, our counsel crosses borders. Our clients never have to face international legal complexity alone.',
+      'Steered by four distinguished partners, we possess the collective power to address every facet of the legal world. No specialisation is beyond our reach.',
   },
 ];
 
@@ -76,51 +76,61 @@ export default function About() {
         </div>
       </section>
 
-      {/* 2 ── FIRM STORY + STATS */}
+      {/* 2 ── FIRM STORY — full width, no floating boxes */}
       <section className="about-story">
         <div className="about-story__inner">
 
-          <div className="about-story__left fade-up">
+          {/* Label + heading row */}
+          <div className="about-story__head fade-up">
             <span className="section-label"><span className="label-line" /> OUR STORY</span>
             <h2 className="about-story__heading">
-              A Firm Built on <br />Trust &amp; Results
+              Excellence Knows No Specialization
             </h2>
-            <p className="about-story__body">
-              Founded in 1999, Mwihaki Nganga &amp; Company Advocates has stood at the
-              forefront of Kenyan and international law for over two decades. What began
-              as a boutique practice in Nairobi has grown into a full-service firm trusted
-              by individuals, corporations, and institutions across East Africa and beyond.
-            </p>
-            <p className="about-story__body">
-              We combine deep courtroom experience with a client-first approach — ensuring
-              every matter receives the dedication it deserves. From complex commercial
-              litigation to sensitive family proceedings, our advocates bring the same
-              rigour, creativity, and commitment to every brief we accept.
-            </p>
-            <p className="about-story__body">
-              From Nairobi to London, our counsel crosses borders so our clients never
-              have to face legal complexity alone.
-            </p>
-            <Link to="/contact" className="about-story__cta">Book a Consultation →</Link>
           </div>
 
-          <div className="about-story__right fade-up">
-            <div className="about-stats">
-              <div className="about-stat">
-                <span className="about-stat__number">100<sup>+</sup></span>
-                <span className="about-stat__label">Cases Won</span>
+          {/* Content row — text left, inline stats right */}
+          <div className="about-story__body-row">
+            <div className="about-story__text fade-up">
+              <p className="about-story__para">
+                At MWIHAKI NGANGA &amp; Company Advocates, excellence knows no
+                specialization. As a dynamic firm steered by four distinguished
+                partners, we possess the collective power to address every facet
+                of the legal world. Having perfected our craft over many years,
+                we bring a rare combination of experience, expertise, and
+                excellence to our service delivery.
+              </p>
+              <p className="about-story__para">
+                Our track record speaks for itself — we have successfully navigated
+                complex and landmark matters, earning the trust of clients who seek
+                not just representation, but victory. Clients retain us because we
+                offer sound legal advice that anticipates challenges and seizes
+                opportunities. We pride ourselves on delivering world-class legal
+                services with the precision required to address our clients' most
+                critical legal and business concerns, turning complexity into clarity.
+              </p>
+              <Link to="/contact" className="about-story__cta">Book a Consultation →</Link>
+            </div>
+
+            {/* Inline stats — horizontal bar, not a box grid */}
+            <div className="about-story__stats fade-up">
+              <div className="about-story__stat">
+                <span className="about-story__stat-num">100<sup>+</sup></span>
+                <span className="about-story__stat-label">Cases Won</span>
               </div>
-              <div className="about-stat">
-                <span className="about-stat__number">200<sup>+</sup></span>
-                <span className="about-stat__label">Clients Served</span>
+              <div className="about-story__stat-divider" />
+              <div className="about-story__stat">
+                <span className="about-story__stat-num">200<sup>+</sup></span>
+                <span className="about-story__stat-label">Clients Served</span>
               </div>
-              <div className="about-stat">
-                <span className="about-stat__number">25<sup>+</sup></span>
-                <span className="about-stat__label">Years of Excellence</span>
+              <div className="about-story__stat-divider" />
+              <div className="about-story__stat">
+                <span className="about-story__stat-num">25<sup>+</sup></span>
+                <span className="about-story__stat-label">Years of Excellence</span>
               </div>
-              <div className="about-stat">
-                <span className="about-stat__number">9</span>
-                <span className="about-stat__label">Practice Areas</span>
+              <div className="about-story__stat-divider" />
+              <div className="about-story__stat">
+                <span className="about-story__stat-num">4</span>
+                <span className="about-story__stat-label">Distinguished Partners</span>
               </div>
             </div>
           </div>
@@ -128,7 +138,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 3 ── VALUES */}
+      {/* 3 ── WHY CHOOSE US — approved styling (image 1), client wording */}
       <section className="about-values">
         <div className="about-values__inner">
           <div className="about-values__header fade-up">
@@ -142,7 +152,11 @@ export default function About() {
           <div className="about-values__grid">
             {values.map((v, i) => (
               <div className="about-value-card fade-up" key={i}>
-                <span className="about-value-card__icon">{v.icon}</span>
+                <div className="about-value-card__top">
+                  <span className="about-value-card__num">0{i + 1}</span>
+                  <span className="about-value-card__icon">{v.icon}</span>
+                </div>
+                <div className="about-value-card__divider" />
                 <h3 className="about-value-card__title">{v.title}</h3>
                 <p className="about-value-card__desc">{v.description}</p>
               </div>
