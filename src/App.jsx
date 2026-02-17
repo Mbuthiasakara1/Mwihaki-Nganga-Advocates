@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import ScrollToTop from './components/ScrollToTop'
+import BlogPost from './pages/BlogPost'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/services" element={<Services />} />
       <Route path="/attorneys" element={<Attorneys />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/contact" element={<Contact />} />
     
      

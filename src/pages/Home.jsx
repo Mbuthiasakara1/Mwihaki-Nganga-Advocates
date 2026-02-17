@@ -82,7 +82,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Link to="/contact" className="btn-gold">Book Appointment</Link>
-            <Link to="/about" className="btn-ghost">View Services</Link>
+            <Link to="/services" className="btn-ghost">View Services</Link>
           </div>
         </div>
         <div className="hero-visual" ref={heroImgRef}>

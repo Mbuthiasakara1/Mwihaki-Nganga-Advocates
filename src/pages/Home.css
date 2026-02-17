@@ -632,23 +632,176 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* ── RESPONSIVE ── */
+/* ══════════════════════════════════════
+   TABLET — 1024px
+══════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .hero { padding: 0 40px; }
+  .hero { padding: 100px 40px 60px; gap: 40px; }
   .hero-title { font-size: 44px; }
+  .hero-img { height: 460px; }
+  .section-title { font-size: 34px; }
   .who-section { padding: 70px 40px; gap: 50px; }
-  .practices-section, .attorneys-section, .blog-section, .quote-section { padding: 70px 40px; }
+  .who-img { height: 400px; }
+  .practices-section,
+  .attorneys-section,
+  .blog-section,
+  .quote-section { padding: 70px 40px; }
   .practices-grid { grid-template-columns: repeat(2, 1fr); }
+  .attorneys-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ══════════════════════════════════════
+   MOBILE — 768px
+══════════════════════════════════════ */
 @media (max-width: 768px) {
-  .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+
+  /* HERO */
+  .hero {
+  grid-template-columns: 1fr;
+  padding: 100px 24px 52px;
+  min-height: 100dvh;
+  gap: 0;
+}
   .hero-visual { display: none; }
-  .hero-title { font-size: 38px; }
-  .who-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+  .hero-text { padding-top: 0; }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+  .hero-title {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .hero-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+  .hero-actions {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.btn-gold,
+.btn-ghost {
+  padding: 12px 24px;
+  font-size: 13px;
+}
+
+  /* MARQUEE */
+  .marquee-track span {
+    font-size: 10px;
+    padding: 0 18px;
+    letter-spacing: 1px;
+  }
+
+  /* WHO WE ARE */
+  .who-section {
+    grid-template-columns: 1fr;
+    padding: 52px 24px 60px;
+    gap: 44px;
+  }
+  .who-img { height: 260px; }
+  .who-badge {
+    bottom: -12px;
+    right: 14px;
+    padding: 16px 20px;
+  }
+  .badge-n { font-size: 24px; }
+  .badge-l { font-size: 9px; }
+  .section-title { font-size: 26px; }
+  .who-text { font-size: 13px; line-height: 1.75; }
+  .feature { padding: 14px 0; gap: 12px; }
+  .feature-icon { font-size: 18px; }
+  .feature-title { font-size: 13px; }
+  .feature-sub { font-size: 12px; }
+
+  /* PRACTICE AREAS */
+  .practices-section { padding: 52px 24px; }
+  .practices-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .practice-card { padding: 22px 16px; }
+  .practice-num {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  .practice-title { font-size: 13px; }
+  .practice-snippet { font-size: 11px; line-height: 1.5; }
+  .practice-arrow { font-size: 14px; margin-top: 12px; }
+
+  /* QUOTE */
+  .quote-section { padding: 52px 24px; }
+  .big-quote {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  .big-quote::before {
+    font-size: 44px;
+    vertical-align: -16px;
+    margin-right: 4px;
+  }
+  .quote-author {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  /* ATTORNEYS */
+  .attorneys-section { padding: 52px 24px; }
+  .attorneys-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .attorney-img { height: 220px; }
+  .attorney-overlay {
+    /* Always visible on mobile — no hover on touch */
+    transform: translateY(0) !important;
+    padding: 28px 12px 14px;
+  }
+  .attorney-name { font-size: 13px; margin-bottom: 2px; }
+  .attorney-role { font-size: 8px; margin-bottom: 6px; letter-spacing: 1px; }
+  .attorney-contacts { gap: 4px; }
+  .attorney-link {
+    font-size: 9px;
+    gap: 4px;
+  }
+  .attorney-link svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* BLOG */
+  .blog-section { padding: 52px 24px; }
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .blog-img { height: 190px; }
+  .blog-content { padding: 16px 16px 20px; }
+  .blog-title { font-size: 15px; }
+  .blog-excerpt { font-size: 12px; margin-bottom: 12px; }
+  .blog-meta { font-size: 10px; margin-bottom: 8px; }
+  .blog-read { font-size: 11px; }
+}
+
+/* ══════════════════════════════════════
+   SMALL MOBILE — 400px
+══════════════════════════════════════ */
+@media (max-width: 400px) {
+  .hero { padding: 90px 18px 44px; }
+  .hero-title { font-size: 26px; }
+  .section-title { font-size: 22px; }
   .practices-grid { grid-template-columns: 1fr; }
-  .attorneys-grid, .blog-grid { grid-template-columns: 1fr; }
-  .section-title { font-size: 32px; }
-  .practices-section, .attorneys-section, .blog-section, .quote-section { padding: 60px 24px; }
-  .big-quote { font-size: 20px; }
+  .attorneys-grid { grid-template-columns: 1fr; }
+  .attorney-img { height: 300px; }
+  .who-section { padding: 44px 18px 52px; }
+  .practices-section,
+  .attorneys-section,
+  .blog-section,
+  .quote-section { padding: 44px 18px; }
 }

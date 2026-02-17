@@ -148,9 +148,7 @@ export default function Services() {
                 <span className="nav-title">{s.title}</span>
               </button>
             ))}
-            <Link to="/contact" className="services-nav-cta">
-              Book a Consultation
-            </Link>
+
           </div>
         </aside>
 
