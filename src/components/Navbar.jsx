@@ -96,9 +96,6 @@ function Navbar() {
             </Link>
           ))}
         </nav>
-        <Link to="/contact" className="navbar-drawer__cta" onClick={() => setMenuOpen(false)}>
-          Book a Consultation
-        </Link>
       </div>
     </>
   )

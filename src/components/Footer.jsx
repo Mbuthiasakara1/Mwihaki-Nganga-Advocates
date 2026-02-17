@@ -65,7 +65,6 @@ export default function Footer() {
             <li>
               <span className="contact-icon">📞</span>
               <div className="footer-contact__multi">
-                <a href="tel:+254722672127">+254 722 672 127</a>
                 <a href="tel:+254787807629">+254 787 807 629</a>
               </div>
             </li>

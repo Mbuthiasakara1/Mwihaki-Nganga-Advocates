@@ -101,9 +101,8 @@ export default function Contact() {
           {/* Google Map */}
           <div className="contact-map">
             <iframe
-              title="Nairobi GPO"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8176985360086!2d36.81656!3d-1.28333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d664e6857f%3A0x37b7ef5c0c4e7fc5!2sNairobi%20GPO!5e0!3m2!1sen!2ske!4v1700000000000"
-              width="100%"
+              title="St. Ellie's House, Nairobi"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8176985360086!2d36.82194!3d-1.28205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f112a08e5e6c9%3A0x8a1a3a1a1a1a1a1a!2sSt.%20Ellie's%20House%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1700000000000"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen=""
