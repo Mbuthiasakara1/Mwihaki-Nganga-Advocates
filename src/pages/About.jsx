@@ -100,7 +100,7 @@ export default function About() {
                 excellence to our service delivery.
               </p>
               <p className="about-story__para">
-                Our track record speaks for itself — we have successfully navigated
+                Our track record speaks for itself  we have successfully navigated
                 complex and landmark matters, earning the trust of clients who seek
                 not just representation, but victory. Clients retain us because we
                 offer sound legal advice that anticipates challenges and seizes

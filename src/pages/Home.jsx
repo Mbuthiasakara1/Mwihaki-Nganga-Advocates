@@ -125,9 +125,9 @@ export default function Home() {
           <span className="section-label">Who We Are</span>
           <h2 className="section-title">A Firm Built on<br />Trust &amp; Results</h2>
           <p className="who-text">
-            Since 1999, our firm has stood at the forefront of Kenyan and international law.
+            Since 2019, our firm has stood at the forefront of Kenyan and international law.
             We combine decades of courtroom experience with a client-first approach — ensuring
-            every case receives the dedication it deserves. From Nairobi to London, our counsel
+            every case receives the dedication it deserves.0ur counsel
             crosses borders so our clients never have to face them alone.
           </p>
           <div className="features">
@@ -158,7 +158,7 @@ export default function Home() {
         </div>
         <div className="practices-grid">
           {practiceAreas.map((p, i) => (
-            <Link to="/about" key={i} className="practice-card fade-up">
+            <Link to="/services" key={i} className="practice-card fade-up">
               <span className="practice-num">{p.num}</span>
               <h3 className="practice-title">{p.title}</h3>
               <p className="practice-snippet">{p.snippet}</p>
@@ -187,11 +187,11 @@ export default function Home() {
         </div>
         <div className="attorneys-grid">
           {[
-            { name: 'Mwihaki Nganga', role: 'Partner', email: 'mwihaki@mwihakingangaadvocates.co.ke', img:Mwihaki},
-            { name: 'Masea Monari', role: 'Partner', email: 'maseamonari@mwihakingangaadvocates.co.ke', img:Masea},
-            { name: 'Humeira Salim', role: 'Partner', email: 'humeira@mwihakingangaadvocates.co.ke', img:Humeira2},
-             { name: 'Salma Nechesa', role: 'Partner', email: 'salm@mwihakingangaadvocates.co.ke', img:Salma }
-          ].map((a, i) => (
+           { name: 'Mwihaki Nganga', role: 'Partner', email: 'mwihaki@mwihakingangaadvocates.co.ke', linkedin: 'https://www.linkedin.com/in/mwihaki-ng-ang-a-119713398', img: Mwihaki },
+           {name: 'Masea Monari', role: 'Partner', email: 'maseamonari@mwihakingangaadvocates.co.ke', linkedin: 'https://ke.linkedin.com/in/masea-monari-138531116', img: Masea },
+           { name: 'Humeira Salim', role: 'Partner', email: 'humeira@mwihakingangaadvocates.co.ke', linkedin: 'https://www.linkedin.com/in/humeira-salim-a6693516a', img: Humeira2 },
+           { name: 'Salma Nechesa', role: 'Partner', email: 'salm@mwihakingangaadvocates.co.ke', linkedin: 'https://www.linkedin.com/in/salma-nechesa-5b71b6220', img: Salma },
+                      ].map((a, i) => (
             <div className="attorney-card fade-up" key={i}>
               <img src={a.img} alt={a.name} className="attorney-img" />
               <div className="attorney-overlay">
@@ -202,7 +202,7 @@ export default function Home() {
                     <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     {a.email}
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="attorney-link" title="LinkedIn">
+                  <a href={a.linkedin} target="_blank" rel="noreferrer" className="attorney-link" title="LinkedIn">
                     <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     LinkedIn
                   </a>
